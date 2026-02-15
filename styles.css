@@ -151,6 +151,70 @@ body {
 }
 
 /* ===================================
+   BOTÓN DE DESCARGA PDF
+   =================================== */
+
+.seccion-descarga {
+    background: linear-gradient(135deg, var(--color-fondo-claro) 0%, #ffffff 100%);
+    padding: 2rem 0;
+    border-bottom: 3px solid var(--color-principal);
+}
+
+.boton-descarga {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1.5rem 3rem;
+    background: linear-gradient(135deg, var(--color-secundario) 0%, #c41e1a 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-media);
+    transition: all 0.3s ease;
+    max-width: 400px;
+    margin: 0 auto;
+    border: 2px solid transparent;
+}
+
+.boton-descarga:hover {
+    background: linear-gradient(135deg, #c41e1a 0%, var(--color-secundario) 100%);
+    box-shadow: var(--sombra-fuerte);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.boton-descarga:active {
+    transform: translateY(0);
+    box-shadow: var(--sombra-suave);
+}
+
+.icono-pdf {
+    width: 48px;
+    height: 48px;
+    stroke: white;
+    transition: transform 0.3s ease;
+}
+
+.boton-descarga:hover .icono-pdf {
+    transform: scale(1.1);
+}
+
+.texto-boton {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.subtexto-boton {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+/* ===================================
    CONTENIDO PRINCIPAL
    =================================== */
 
@@ -628,6 +692,29 @@ mjx-container {
     
     .container {
         padding: 0.5rem;
+    }
+    
+    /* Estilos responsive para el botón de descarga */
+    .seccion-descarga {
+        padding: 1.5rem 0;
+    }
+    
+    .boton-descarga {
+        padding: 1.25rem 2rem;
+        max-width: 100%;
+    }
+    
+    .icono-pdf {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .texto-boton {
+        font-size: 1.2rem;
+    }
+    
+    .subtexto-boton {
+        font-size: 0.85rem;
     }
 }
 
