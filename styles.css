@@ -1,0 +1,686 @@
+/* ===================================
+   ESTILOS GENERALES
+   =================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colores principales */
+    --color-principal: #10579b;
+    --color-secundario: #9d1a17;
+    --color-texto: #1a1a1a;
+    --color-texto-claro: #4a4a4a;
+    --color-fondo: #ffffff;
+    --color-fondo-claro: #f8f9fa;
+    
+    /* Colores de cajas */
+    --color-enunciado: #2c2c2c;
+    --color-datos: #10579b;
+    --color-procedimiento: #2d7d3e;
+    --color-resultado: #d97706;
+    --color-advertencia: #dc2626;
+    --color-nota: #6366f1;
+    
+    /* Espaciado */
+    --espaciado-pequeno: 0.5rem;
+    --espaciado-medio: 1rem;
+    --espaciado-grande: 2rem;
+    
+    /* Bordes */
+    --radio-borde: 8px;
+    --radio-borde-pequeno: 4px;
+    
+    /* Sombras */
+    --sombra-suave: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --sombra-media: 0 4px 6px rgba(0, 0, 0, 0.15);
+    --sombra-fuerte: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    color: var(--color-texto);
+    background-color: var(--color-fondo-claro);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--espaciado-medio);
+}
+
+/* ===================================
+   PORTADA
+   =================================== */
+
+.portada {
+    background: linear-gradient(135deg, var(--color-principal) 0%, #1976d2 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--espaciado-grande);
+    position: relative;
+    overflow: hidden;
+}
+
+.portada::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(157, 26, 23, 0.1) 0%, transparent 100%);
+}
+
+.portada-container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 900px;
+}
+
+.universidad-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.universidad-header h2,
+.universidad-header h3 {
+    font-size: 1.3rem;
+    font-weight: normal;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.5px;
+}
+
+.titulo-principal {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radio-borde);
+    backdrop-filter: blur(10px);
+}
+
+.titulo-principal h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.4;
+}
+
+.info-trabajo {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--color-texto);
+    padding: 2rem;
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-fuerte);
+    margin-top: 2rem;
+}
+
+.info-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-item .label {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--color-texto-claro);
+}
+
+.info-item .valor {
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+/* ===================================
+   CONTENIDO PRINCIPAL
+   =================================== */
+
+.contenido {
+    background: white;
+    padding: var(--espaciado-grande) 0;
+}
+
+.capitulo {
+    background: white;
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-media);
+    padding: var(--espaciado-grande);
+    margin-bottom: var(--espaciado-grande);
+}
+
+.titulo-capitulo {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #1f1f1f 0%, #2c2c2c 100%);
+    padding: 1.5rem;
+    border-radius: var(--radio-borde);
+    margin-bottom: var(--espaciado-grande);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: var(--sombra-media);
+}
+
+.titulo-seccion {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #3c3c3c 0%, #4a4a4a 100%);
+    padding: 1rem 1.5rem;
+    border-radius: var(--radio-borde);
+    margin: 2rem 0 1.5rem 0;
+    box-shadow: var(--sombra-suave);
+}
+
+.subseccion-titulo h4 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--color-principal);
+    margin: 1.5rem 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-principal);
+}
+
+/* ===================================
+   PROBLEMAS
+   =================================== */
+
+.problema {
+    margin-bottom: 3rem;
+    padding: var(--espaciado-grande);
+    background: var(--color-fondo-claro);
+    border-radius: var(--radio-borde);
+    border-left: 5px solid var(--color-principal);
+}
+
+.titulo-problema {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--color-principal);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-principal);
+}
+
+/* ===================================
+   CAJAS DE CONTENIDO
+   =================================== */
+
+.enunciado,
+.datos,
+.procedimiento,
+.resultado,
+.notas-adicionales {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-suave);
+}
+
+.enunciado {
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+    border-left: 5px solid var(--color-enunciado);
+}
+
+.enunciado h4 {
+    color: var(--color-enunciado);
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.enunciado p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+}
+
+.descripcion-figura {
+    font-style: italic;
+    color: var(--color-texto-claro);
+    margin-top: 0.5rem;
+}
+
+.datos {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    border-left: 5px solid var(--color-datos);
+}
+
+.datos h5 {
+    color: var(--color-datos);
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.procedimiento {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    border-left: 5px solid var(--color-procedimiento);
+}
+
+.procedimiento h5 {
+    color: var(--color-procedimiento);
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.resultado {
+    background: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%);
+    border-left: 5px solid var(--color-resultado);
+}
+
+.resultado h5 {
+    color: #92400e;
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.notas-adicionales {
+    background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+    border-left: 5px solid var(--color-nota);
+}
+
+.notas-adicionales h5 {
+    color: var(--color-nota);
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* ===================================
+   LISTAS Y PASOS
+   =================================== */
+
+.datos ul,
+.procedimiento ol,
+.resultado ul,
+.notas-adicionales ul {
+    margin-left: 1.5rem;
+}
+
+.datos li,
+.notas-adicionales li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+.procedimiento ol {
+    counter-reset: item;
+    list-style: none;
+    margin-left: 0;
+}
+
+.procedimiento ol > li {
+    counter-increment: item;
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.procedimiento ol > li::before {
+    content: counter(item) ".";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    color: var(--color-procedimiento);
+    font-size: 1.1rem;
+}
+
+.procedimiento ol > li > strong {
+    display: block;
+    color: var(--color-procedimiento);
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+}
+
+.procedimiento ol > li > p {
+    margin: 0.5rem 0;
+}
+
+.procedimiento ol > li > ul {
+    margin-top: 0.5rem;
+    margin-left: 1.5rem;
+}
+
+.paso {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: var(--radio-borde-pequeno);
+}
+
+.paso h6 {
+    color: var(--color-procedimiento);
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+}
+
+.paso p {
+    margin: 0.5rem 0;
+}
+
+.paso ul {
+    margin: 0.5rem 0 0.5rem 2rem;
+}
+
+/* ===================================
+   RESULTADOS
+   =================================== */
+
+.resultados-lista {
+    list-style: none;
+    margin-left: 0;
+}
+
+.resultados-lista li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.resultados-lista li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--color-resultado);
+    font-weight: bold;
+}
+
+.resultado-destacado {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radio-borde-pequeno);
+    font-weight: bold;
+    color: #92400e;
+    display: inline-block;
+}
+
+.resultado-final-destacado {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1.5rem;
+    border-radius: var(--radio-borde);
+    border: 2px solid var(--color-resultado);
+    margin: 1rem 0;
+}
+
+.resultado-final-destacado p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.resultado-grande {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-resultado);
+    display: inline-block;
+    background: white;
+    padding: 0.3rem 1rem;
+    border-radius: var(--radio-borde-pequeno);
+    box-shadow: var(--sombra-suave);
+}
+
+/* ===================================
+   MENSAJES ESPECIALES
+   =================================== */
+
+.advertencia-texto {
+    color: var(--color-advertencia);
+    font-weight: bold;
+    padding: 0.75rem;
+    background: rgba(220, 38, 38, 0.1);
+    border-radius: var(--radio-borde-pequeno);
+    border-left: 4px solid var(--color-advertencia);
+    margin: 1rem 0;
+}
+
+.exito-texto {
+    color: var(--color-procedimiento);
+    font-weight: bold;
+    padding: 0.75rem;
+    background: rgba(45, 125, 62, 0.1);
+    border-radius: var(--radio-borde-pequeno);
+    border-left: 4px solid var(--color-procedimiento);
+    margin: 1rem 0;
+}
+
+.nota-pie {
+    font-size: 0.9rem;
+    color: var(--color-texto-claro);
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+/* ===================================
+   FIGURAS
+   =================================== */
+
+.figura {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: white;
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-suave);
+    border: 1px solid #e5e7eb;
+}
+
+.figura-descripcion h5 {
+    color: var(--color-principal);
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.diagrama-texto {
+    background: var(--color-fondo-claro);
+    padding: 1.5rem;
+    border-radius: var(--radio-borde-pequeno);
+}
+
+.diagrama-texto p {
+    margin-bottom: 0.75rem;
+}
+
+.diagrama-texto ul {
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+}
+
+.diagrama-texto li {
+    margin-bottom: 0.5rem;
+}
+
+.nota-figura {
+    font-size: 0.9rem;
+    color: var(--color-texto-claro);
+    font-style: italic;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* ===================================
+   ECUACIONES MATEMÁTICAS
+   =================================== */
+
+.MathJax {
+    font-size: 1.1em !important;
+}
+
+mjx-container {
+    margin: 1rem 0 !important;
+}
+
+/* ===================================
+   PIE DE PÁGINA
+   =================================== */
+
+.pie-pagina {
+    background: linear-gradient(135deg, var(--color-principal) 0%, #1976d2 100%);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.pie-pagina p {
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
+}
+
+/* ===================================
+   SOLUCIÓN
+   =================================== */
+
+.solucion {
+    margin-top: 1.5rem;
+}
+
+.solucion > h4 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--color-principal);
+    margin-bottom: 1.5rem;
+    padding: 0.75rem;
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    border-radius: var(--radio-borde);
+    border-left: 5px solid var(--color-principal);
+}
+
+/* ===================================
+   RESPONSIVE
+   =================================== */
+
+@media (max-width: 768px) {
+    .portada {
+        padding: var(--espaciado-medio);
+    }
+    
+    .universidad-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .universidad-header h2,
+    .universidad-header h3 {
+        font-size: 1rem;
+    }
+    
+    .titulo-principal h1 {
+        font-size: 1.5rem;
+    }
+    
+    .info-item {
+        grid-template-columns: 1fr;
+        gap: 0.3rem;
+    }
+    
+    .titulo-capitulo {
+        font-size: 1.6rem;
+        padding: 1rem;
+    }
+    
+    .titulo-seccion {
+        font-size: 1.4rem;
+        padding: 0.75rem 1rem;
+    }
+    
+    .titulo-problema {
+        font-size: 1.3rem;
+    }
+    
+    .problema {
+        padding: var(--espaciado-medio);
+    }
+    
+    .enunciado,
+    .datos,
+    .procedimiento,
+    .resultado,
+    .notas-adicionales {
+        padding: 1rem;
+    }
+    
+    .container {
+        padding: 0.5rem;
+    }
+}
+
+@media print {
+    .portada {
+        page-break-after: always;
+    }
+    
+    .problema {
+        page-break-inside: avoid;
+    }
+    
+    body {
+        background: white;
+    }
+    
+    .capitulo {
+        box-shadow: none;
+    }
+}
+
+/* ===================================
+   MEJORAS DE ACCESIBILIDAD
+   =================================== */
+
+a {
+    color: var(--color-principal);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #1976d2;
+}
+
+a:focus {
+    outline: 2px solid var(--color-principal);
+    outline-offset: 2px;
+}
+
+/* ===================================
+   ANIMACIONES SUAVES
+   =================================== */
+
+.problema,
+.enunciado,
+.datos,
+.procedimiento,
+.resultado,
+.notas-adicionales {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.problema:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-media);
+}

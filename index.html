@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolución de Problemas - Miembros en Compresión</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- MathJax para renderizar ecuaciones matemáticas -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+</head>
+<body>
+    <!-- Portada -->
+    <header class="portada">
+        <div class="portada-container">
+            <div class="universidad-header">
+                <h1>Universidad Nacional del Altiplano</h1>
+                <h2>Facultad de Ingeniería Civil y Arquitectura</h2>
+                <h3>Escuela Profesional de Ingeniería Civil</h3>
+            </div>
+            
+            <div class="titulo-principal">
+                <h1>Resolución de Problemas de los Capítulos: II, III, IV</h1>
+            </div>
+            
+            <div class="info-trabajo">
+                <div class="info-item">
+                    <span class="label">Asignatura:</span>
+                    <span class="valor">DISEÑO EN ACERO</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Grupo:</span>
+                    <span class="valor">"ÚNICO"</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Ciclo:</span>
+                    <span class="valor">IX</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Docente:</span>
+                    <span class="valor">Ing. ROQUE ROQUE ALEX DARWIN</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Estudiante:</span>
+                    <span class="valor">JINCHUÑA SALAMANCA, Ronald</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Código est.:</span>
+                    <span class="valor">213591</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Fecha:</span>
+                    <span class="valor">Febrero 2026 - PUNO PERÚ</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="contenido">
+        <div class="container">
+            <!-- Capítulo -->
+            <section class="capitulo">
+                <h1 class="titulo-capitulo">Problemas: MIEMBROS EN COMPRESIÓN</h1>
+                
+                <!-- Sección: Requisitos de AISC -->
+                <section class="seccion">
+                    <h2 class="titulo-seccion">Requisitos de AISC</h2>
+                    
+                    <!-- Problema 4.3-3 -->
+                    <article class="problema">
+                        <h3 class="titulo-problema">Problema 4.3-3</h3>
+                        
+                        <div class="enunciado">
+                            <h4>🔵 ENUNCIADO DEL PROBLEMA</h4>
+                            <p>Calcule la resistencia de diseño por compresión axial del miembro mostrado en la Figura P4.3-3. Considere acero A36.</p>
+                            <p class="descripcion-figura"><em>Se muestra un perfil M5×18.9 de acero A36, con longitud de 11 pies, con un extremo (superior) empotrado y otro (Inferior) articulado.</em></p>
+                        </div>
+
+                        <div class="figura">
+                            <div class="figura-descripcion">
+                                <h5>Figura P4.3-3</h5>
+                                <div class="diagrama-texto">
+                                    <p><strong>Esquema del miembro en compresión:</strong></p>
+                                    <ul>
+                                        <li>Perfil: M5×18.9</li>
+                                        <li>Longitud: 11 ft</li>
+                                        <li>Apoyo superior: Empotrado (fijo)</li>
+                                        <li>Apoyo inferior: Articulado</li>
+                                        <li>Carga: P (compresión axial hacia abajo)</li>
+                                    </ul>
+                                    <p class="nota-figura">Nota: El diagrama original contiene una representación gráfica del miembro vertical con sus apoyos y carga aplicada.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="solucion">
+                            <h4>SOLUCIÓN</h4>
+                            
+                            <div class="datos">
+                                <h5>📋 Datos del problema</h5>
+                                <ul>
+                                    <li>Acero A36: $F_y = 36\ \text{ksi}$, $E = 29000\ \text{ksi}$</li>
+                                    <li>Perfil M5×18.9 (valores tomados del Manual AISC, Tabla 1-4):
+                                        <ul>
+                                            <li>Área bruta: $A_g = 5.56\ \text{in}^2$</li>
+                                            <li>Radio de giro eje fuerte: $r_x = 2.08\ \text{in}$</li>
+                                            <li>Radio de giro eje débil: $r_y = 1.25\ \text{in}$ (mínimo)</li>
+                                        </ul>
+                                    </li>
+                                    <li>Longitud: $L = 11\ \text{ft} = 11 \times 12 = 132\ \text{in}$</li>
+                                    <li>Condiciones de apoyo: empotrado–articulado ⇒ factor de longitud efectiva $K = 0.8$ (valor recomendado por AISC)*</li>
+                                </ul>
+                                <p class="nota-pie">* El valor teórico para la combinación empotrado-articulado es K=0.7; sin embargo, AISC recomienda usar K=0.8 en diseño para considerar imperfecciones y condiciones reales de apoyo.</p>
+                            </div>
+
+                            <div class="procedimiento">
+                                <h5>⚙️ Procedimiento</h5>
+                                <ol>
+                                    <li>
+                                        <strong>Longitud efectiva:</strong>
+                                        $$KL = 0.8 \times 132 = 105.6\ \text{in}$$
+                                    </li>
+                                    
+                                    <li>
+                                        <strong>Relación de esbeltez (usando el radio de giro mínimo):</strong>
+                                        $$\frac{KL}{r} = \frac{105.6}{r_y} = \frac{105.6}{1.25} = 84.48$$
+                                    </li>
+                                    
+                                    <li>
+                                        <strong>Parámetro de esbeltez adimensional:</strong>
+                                        $$\lambda_c = \frac{KL}{r\pi}\sqrt{\frac{F_y}{E}} = \frac{84.48}{\pi}\sqrt{\frac{36}{29000}}$$
+                                        
+                                        <p>Calculando:</p>
+                                        $$\sqrt{\frac{36}{29000}} = \sqrt{0.001241} = 0.03523$$
+                                        
+                                        $$\lambda_c = \frac{84.48}{3.1416} \times 0.03523 = 26.89 \times 0.03523 = 0.947$$
+                                    </li>
+                                    
+                                    <li>
+                                        <strong>Verificación del límite entre columnas inelásticas y elásticas:</strong>
+                                        $$\lambda_c = 0.947 < 1.5 \quad \Rightarrow \text{Columna inelástica}$$
+                                    </li>
+                                    
+                                    <li>
+                                        <strong>Esfuerzo crítico de pandeo (para $\lambda_c \leq 1.5$):</strong>
+                                        $$F_{cr} = \left[0.658^{(\lambda_c)^2}\right]F_y = \left[0.658^{(0.947)^2}\right](36)$$
+                                        
+                                        <p>Calculando el exponente:</p>
+                                        $$(\lambda_c)^2 = (0.947)^2 = 0.897$$
+                                        
+                                        $$0.658^{0.897} = 0.690$$
+                                        
+                                        <p>Entonces:</p>
+                                        $$F_{cr} = 0.690 \times 36 = 24.84\ \text{ksi}$$
+                                    </li>
+                                    
+                                    <li>
+                                        <strong>Resistencia nominal a compresión:</strong>
+                                        $$P_n = F_{cr} A_g = 24.84 \times 5.56 = 138.1\ \text{kips}$$
+                                    </li>
+                                </ol>
+                            </div>
+
+                            <div class="resultado">
+                                <h5>✅ Respuesta</h5>
+                                <ul class="resultados-lista">
+                                    <li>Parámetro de esbeltez: <span class="resultado-destacado">$\lambda_c = 0.947$</span></li>
+                                    <li>Esfuerzo crítico de pandeo: <span class="resultado-destacado">$F_{cr} = 24.84\ \text{ksi}$</span></li>
+                                    <li>Resistencia nominal: <span class="resultado-destacado">$P_n = 138.1\ \text{kips}$</span></li>
+                                    <li>Resistencia de diseño (LRFD, $\phi_c = 0.90$)*:
+                                        $$\phi_c P_n = 0.90 \times 138.1 = 124.3\ \text{kips} \approx \boxed{124\ \text{kips}}$$
+                                    </li>
+                                    <li>Si se requiriera la resistencia admisible (ASD), con $\Omega_c = 1.67$:
+                                        $$P_n / \Omega_c = 138.1 / 1.67 = 82.7\ \text{kips}$$
+                                    </li>
+                                </ul>
+                                <p class="nota-pie">* El factor de resistencia para compresión en LRFD según AISC es φc = 0.90 (Capítulo E).</p>
+                            </div>
+
+                            <div class="notas-adicionales">
+                                <h5>📝 Notas adicionales</h5>
+                                <ul>
+                                    <li>El parámetro de esbeltez $\lambda_c$ es adimensional e incorpora las propiedades del material, simplificando la determinación del tipo de pandeo (elástico o inelástico).</li>
+                                    <li>La frontera $\lambda_c = 1.5$ corresponde al límite tradicional $\frac{KL}{r} = 4.71\sqrt{\frac{E}{F_y}}$. En este caso:
+                                        $$4.71\sqrt{\frac{29000}{36}} = 133.7 \quad \text{y} \quad \lambda_c = 1.5$$
+                                        $$\Rightarrow \frac{KL}{r} = 1.5 \pi \sqrt{\frac{E}{F_y}} = 133.7$$
+                                    </li>
+                                    <li>Para columnas inelásticas ($\lambda_c \leq 1.5$), se usa: $F_{cr} = \left[0.658^{(\lambda_c)^2}\right]F_y$</li>
+                                    <li>Para columnas elásticas ($\lambda_c > 1.5$), se usa: $F_{cr} = \frac{0.877}{(\lambda_c)^2}F_y$</li>
+                                    <li>El perfil M5×18.9 es un perfil laminado tipo "M" (vigas de ala ancha livianas); sus propiedades geométricas se obtienen directamente del Manual del AISC.</li>
+                                    <li>Se ha considerado el pandeo por flexión alrededor del eje débil (menor radio de giro, $r_y = 1.25\ \text{in}$) por ser el modo crítico en ausencia de arriostramiento intermedio.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Problema 4.4-7 -->
+                    <article class="problema">
+                        <h3 class="titulo-problema">Problema 4.4-7</h3>
+                        
+                        <div class="subseccion-titulo">
+                            <h4>Diseño</h4>
+                        </div>
+                        
+                        <div class="enunciado">
+                            <h4>🔵 ENUNCIADO DEL PROBLEMA</h4>
+                            <p>Seleccione un perfil W21 para las condiciones del Problema 4.4-5*.</p>
+                            <p class="nota-pie">* La carga mostrada en la FIGURA P4.4-5 está factorizada. Considere acero A572 grado 50.</p>
+                        </div>
+
+                        <div class="figura">
+                            <div class="figura-descripcion">
+                                <h5>Figura P4.4-5</h5>
+                                <div class="diagrama-texto">
+                                    <p><strong>Esquema del miembro en compresión:</strong></p>
+                                    <ul>
+                                        <li>Perfil: W21 (a seleccionar)</li>
+                                        <li>Longitud: 17 ft</li>
+                                        <li>Apoyo inferior: Empotrado (base fija)</li>
+                                        <li>Extremo superior: Libre (voladizo)</li>
+                                        <li>Carga factorizada: 300 kips (compresión axial hacia abajo)</li>
+                                    </ul>
+                                    <p class="nota-figura">Nota: El diagrama original muestra una columna en voladizo con base empotrada y carga aplicada en el extremo superior libre.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="solucion">
+                            <h4>SOLUCIÓN</h4>
+                            
+                            <div class="datos">
+                                <h5>📋 Datos del problema</h5>
+                                <ul>
+                                    <li>Acero A572 Grado 50: $F_y = 50\ \text{ksi}$, $E = 29000\ \text{ksi}$</li>
+                                    <li>Carga de compresión factorizada (LRFD): $P_u = 300\ \text{kips}$</li>
+                                    <li>Longitud total: $L = 17\ \text{ft} = 17 \times 12 = 204\ \text{in}$</li>
+                                    <li>Condiciones de apoyo:
+                                        <ul>
+                                            <li>Base empotrada</li>
+                                            <li>Extremo superior libre (voladizo)</li>
+                                            <li>Factor de longitud efectiva: $K = 2.0$</li>
+                                        </ul>
+                                    </li>
+                                    <li>Factor de resistencia LRFD: $\phi_c = 0.90$</li>
+                                    <li>Perfil requerido: Serie W21</li>
+                                </ul>
+                            </div>
+
+                            <div class="procedimiento">
+                                <h5>⚙️ Procedimiento</h5>
+                                
+                                <div class="paso">
+                                    <h6>Paso 1: Resistencia nominal requerida</h6>
+                                    <p>La resistencia de diseño debe cumplir:</p>
+                                    $$\phi_c P_n \geq P_u$$
+                                    
+                                    <p>Por lo tanto:</p>
+                                    $$P_n \geq \frac{P_u}{\phi_c} = \frac{300}{0.90} = 333.3\ \text{kips}$$
+                                </div>
+
+                                <div class="paso">
+                                    <h6>Paso 2: Longitud efectiva</h6>
+                                    <p>Para una columna con base empotrada y extremo superior libre (condición de voladizo):</p>
+                                    $$KL = 2.0 \times 204 = 408\ \text{in}$$
+                                </div>
+
+                                <div class="paso">
+                                    <h6>Paso 3: Selección tentativa del perfil</h6>
+                                    <p>Para acero A572 Grado 50, estimamos inicialmente el área requerida considerando un esfuerzo crítico conservador (aproximadamente 0.5Fy para columnas esbeltas):</p>
+                                    $$A_g \approx \frac{P_n}{0.5 F_y} = \frac{333.3}{0.5 \times 50} = 13.3\ \text{in}^2$$
+                                    
+                                    <p>Del Manual AISC, probamos con <strong>W21×62</strong>:</p>
+                                    <ul>
+                                        <li>$A_g = 18.3\ \text{in}^2$</li>
+                                        <li>$r_x = 8.54\ \text{in}$</li>
+                                        <li>$r_y = 2.05\ \text{in}$ (radio de giro mínimo)</li>
+                                    </ul>
+                                </div>
+
+                                <div class="paso">
+                                    <h6>Paso 4: Verificación del perfil W21×62</h6>
+                                    
+                                    <p><strong>4.1 Relación de esbeltez:</strong></p>
+                                    $$\frac{KL}{r} = \frac{408}{r_y} = \frac{408}{2.05} = 199.0$$
+                                    
+                                    <p><strong>4.2 Parámetro de esbeltez adimensional:</strong></p>
+                                    $$\lambda_c = \frac{KL}{r\pi}\sqrt{\frac{F_y}{E}} = \frac{199.0}{\pi}\sqrt{\frac{50}{29000}}$$
+                                    
+                                    $$\sqrt{\frac{50}{29000}} = 0.0415$$
+                                    
+                                    $$\lambda_c = \frac{199.0}{3.1416} \times 0.0415 = 2.63$$
+                                    
+                                    <p><strong>4.3 Tipo de pandeo:</strong></p>
+                                    $$\lambda_c = 2.63 > 1.5 \quad \Rightarrow \text{Columna elástica}$$
+                                    
+                                    <p><strong>4.4 Esfuerzo crítico de pandeo (para $\lambda_c > 1.5$):</strong></p>
+                                    $$F_{cr} = \frac{0.877}{(\lambda_c)^2}F_y = \frac{0.877}{(2.63)^2} \times 50$$
+                                    
+                                    $$F_{cr} = \frac{0.877}{6.92} \times 50 = 0.127 \times 50 = 6.34\ \text{ksi}$$
+                                    
+                                    <p><strong>4.5 Resistencia nominal:</strong></p>
+                                    $$P_n = F_{cr} A_g = 6.34 \times 18.3 = 116.0\ \text{kips}$$
+                                    
+                                    <p><strong>4.6 Resistencia de diseño:</strong></p>
+                                    $$\phi_c P_n = 0.90 \times 116.0 = 104.4\ \text{kips}$$
+                                    
+                                    <p class="advertencia-texto">⚠️ <strong>No cumple:</strong> $104.4 < 300$ kips. El perfil W21×62 es insuficiente.</p>
+                                </div>
+
+                                <div class="paso">
+                                    <h6>Paso 5: Nuevo intento - W21×101</h6>
+                                    
+                                    <p>Propiedades del W21×101:</p>
+                                    <ul>
+                                        <li>$A_g = 29.8\ \text{in}^2$</li>
+                                        <li>$r_x = 9.02\ \text{in}$</li>
+                                        <li>$r_y = 2.89\ \text{in}$</li>
+                                    </ul>
+                                    
+                                    <p><strong>Relación de esbeltez:</strong></p>
+                                    $$\frac{KL}{r} = \frac{408}{2.89} = 141.2$$
+                                    
+                                    <p><strong>Parámetro de esbeltez:</strong></p>
+                                    $$\lambda_c = \frac{141.2}{\pi} \times 0.0415 = 1.86$$
+                                    
+                                    <p>Columna elástica ($\lambda_c > 1.5$)</p>
+                                    
+                                    <p><strong>Esfuerzo crítico:</strong></p>
+                                    $$F_{cr} = \frac{0.877}{(1.86)^2} \times 50 = \frac{0.877}{3.46} \times 50 = 12.67\ \text{ksi}$$
+                                    
+                                    <p><strong>Resistencia nominal:</strong></p>
+                                    $$P_n = 12.67 \times 29.8 = 377.6\ \text{kips}$$
+                                    
+                                    <p><strong>Resistencia de diseño:</strong></p>
+                                    $$\phi_c P_n = 0.90 \times 377.6 = 339.8\ \text{kips}$$
+                                    
+                                    <p class="exito-texto">✅ <strong>Cumple:</strong> $339.8 > 300$ kips</p>
+                                </div>
+                            </div>
+
+                            <div class="resultado">
+                                <h5>✅ Respuesta Final</h5>
+                                <div class="resultado-final-destacado">
+                                    <p><strong>Perfil seleccionado:</strong> <span class="resultado-grande">W21×101</span></p>
+                                    <ul class="resultados-lista">
+                                        <li>Área bruta: $A_g = 29.8\ \text{in}^2$</li>
+                                        <li>Parámetro de esbeltez: $\lambda_c = 1.86$</li>
+                                        <li>Esfuerzo crítico: $F_{cr} = 12.67\ \text{ksi}$</li>
+                                        <li>Resistencia nominal: $P_n = 377.6\ \text{kips}$</li>
+                                        <li>Resistencia de diseño: <span class="resultado-destacado">$\phi_c P_n = 339.8\ \text{kips}$</span></li>
+                                        <li>Margen de seguridad: $(339.8 - 300)/300 = 13.3\%$</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="notas-adicionales">
+                                <h5>📝 Notas adicionales</h5>
+                                <ul>
+                                    <li>La condición de voladizo (base empotrada, extremo libre) es la más crítica para pandeo, con $K = 2.0$, duplicando la longitud efectiva.</li>
+                                    <li>La alta relación de esbeltez ($KL/r = 141.2$) produce pandeo elástico, donde el esfuerzo crítico es considerablemente menor que el esfuerzo de fluencia.</li>
+                                    <li>El perfil W21×101 proporciona un margen de seguridad del 13.3% sobre la carga requerida, lo cual es adecuado considerando variabilidades de fabricación e instalación.</li>
+                                    <li>En la práctica, se recomienda verificar también el pandeo torsional y por flexo-torsión para secciones con relaciones $b/d$ extremas.</li>
+                                    <li>Para método ASD, la resistencia admisible sería: $P_n/\Omega_c = 377.6/1.67 = 226.1$ kips.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                </section>
+            </section>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="pie-pagina">
+        <div class="container">
+            <p>&copy; 2026 Universidad Nacional del Altiplano - Facultad de Ingeniería Civil y Arquitectura</p>
+            <p>Documento académico - Diseño en Acero</p>
+        </div>
+    </footer>
+
+</body>
+</html>
