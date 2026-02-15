@@ -29,13 +29,33 @@
             </div>
             
             <div class="titulo-principal">
-                <h1>Resolución de Problemas Cap. IV</h1>
+                <h1>Resolución de Problemas de los Capítulos: II, III, IV</h1>
             </div>
             
             <div class="info-trabajo">
                 <div class="info-item">
                     <span class="label">Asignatura:</span>
                     <span class="valor">DISEÑO EN ACERO</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Grupo:</span>
+                    <span class="valor">"ÚNICO"</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Ciclo:</span>
+                    <span class="valor">IX</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Docente:</span>
+                    <span class="valor">Ing. ROQUE ROQUE ALEX DARWIN</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Estudiante:</span>
+                    <span class="valor">JINCHUÑA SALAMANCA, Ronald</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Código est.:</span>
+                    <span class="valor">213591</span>
                 </div>
                 <div class="info-item">
                     <span class="label">Fecha:</span>
@@ -56,14 +76,14 @@
                 <section class="seccion">
                     <h2 class="titulo-seccion">Requisitos de AISC</h2>
                     
-                    <!-- Problema 4.3-3 -->
+                    <!-- ==================== PROBLEMA 4.3-3 ==================== -->
                     <article class="problema">
                         <h3 class="titulo-problema">Problema 4.3-3</h3>
                         
                         <div class="enunciado">
                             <h4>🔵 ENUNCIADO DEL PROBLEMA</h4>
                             <p>Calcule la resistencia de diseño por compresión axial del miembro mostrado en la Figura P4.3-3. Considere acero A36.</p>
-                            <p class="descripcion-figura"><em>Se muestra un perfil M5×18.9 de acero A36, con longitud de 11 pies, con un extremo (superior) empotrado y otro (Inferior) articulado.</em></p>
+                            <p class="descripcion-figura"><em>Se muestra un perfil M5×18.9 de acero A36, con longitud de 11 pies, con un extremo (superior) empotrado y otro (inferior) articulado.</em></p>
                         </div>
 
                         <div class="figura">
@@ -171,10 +191,7 @@
                                 <h5>📝 Notas adicionales</h5>
                                 <ul>
                                     <li>El parámetro de esbeltez $\lambda_c$ es adimensional e incorpora las propiedades del material, simplificando la determinación del tipo de pandeo (elástico o inelástico).</li>
-                                    <li>La frontera $\lambda_c = 1.5$ corresponde al límite tradicional $\frac{KL}{r} = 4.71\sqrt{\frac{E}{F_y}}$. En este caso:
-                                        $$4.71\sqrt{\frac{29000}{36}} = 133.7 \quad \text{y} \quad \lambda_c = 1.5$$
-                                        $$\Rightarrow \frac{KL}{r} = 1.5 \pi \sqrt{\frac{E}{F_y}} = 133.7$$
-                                    </li>
+                                    <li>La frontera $\lambda_c = 1.5$ corresponde al límite tradicional $\frac{KL}{r} = 4.71\sqrt{\frac{E}{F_y}}$.</li>
                                     <li>Para columnas inelásticas ($\lambda_c \leq 1.5$), se usa: $F_{cr} = \left[0.658^{(\lambda_c)^2}\right]F_y$</li>
                                     <li>Para columnas elásticas ($\lambda_c > 1.5$), se usa: $F_{cr} = \frac{0.877}{(\lambda_c)^2}F_y$</li>
                                     <li>El perfil M5×18.9 es un perfil laminado tipo "M" (vigas de ala ancha livianas); sus propiedades geométricas se obtienen directamente del Manual del AISC.</li>
@@ -184,7 +201,7 @@
                         </div>
                     </article>
 
-                    <!-- Problema 4.4-7 -->
+                    <!-- ==================== PROBLEMA 4.4-7 ==================== -->
                     <article class="problema">
                         <h3 class="titulo-problema">Problema 4.4-7</h3>
                         
@@ -255,76 +272,34 @@
                                 </div>
 
                                 <div class="paso">
-                                    <h6>Paso 3: Selección tentativa del perfil</h6>
-                                    <p>Para acero A572 Grado 50, estimamos inicialmente el área requerida considerando un esfuerzo crítico conservador (aproximadamente 0.5Fy para columnas esbeltas):</p>
-                                    $$A_g \approx \frac{P_n}{0.5 F_y} = \frac{333.3}{0.5 \times 50} = 13.3\ \text{in}^2$$
+                                    <h6>Paso 3: Selección del perfil W21×101</h6>
                                     
-                                    <p>Del Manual AISC, probamos con <strong>W21×62</strong>:</p>
-                                    <ul>
-                                        <li>$A_g = 18.3\ \text{in}^2$</li>
-                                        <li>$r_x = 8.54\ \text{in}$</li>
-                                        <li>$r_y = 2.05\ \text{in}$ (radio de giro mínimo)</li>
-                                    </ul>
-                                </div>
-
-                                <div class="paso">
-                                    <h6>Paso 4: Verificación del perfil W21×62</h6>
-                                    
-                                    <p><strong>4.1 Relación de esbeltez:</strong></p>
-                                    $$\frac{KL}{r} = \frac{408}{r_y} = \frac{408}{2.05} = 199.0$$
-                                    
-                                    <p><strong>4.2 Parámetro de esbeltez adimensional:</strong></p>
-                                    $$\lambda_c = \frac{KL}{r\pi}\sqrt{\frac{F_y}{E}} = \frac{199.0}{\pi}\sqrt{\frac{50}{29000}}$$
-                                    
-                                    $$\sqrt{\frac{50}{29000}} = 0.0415$$
-                                    
-                                    $$\lambda_c = \frac{199.0}{3.1416} \times 0.0415 = 2.63$$
-                                    
-                                    <p><strong>4.3 Tipo de pandeo:</strong></p>
-                                    $$\lambda_c = 2.63 > 1.5 \quad \Rightarrow \text{Columna elástica}$$
-                                    
-                                    <p><strong>4.4 Esfuerzo crítico de pandeo (para $\lambda_c > 1.5$):</strong></p>
-                                    $$F_{cr} = \frac{0.877}{(\lambda_c)^2}F_y = \frac{0.877}{(2.63)^2} \times 50$$
-                                    
-                                    $$F_{cr} = \frac{0.877}{6.92} \times 50 = 0.127 \times 50 = 6.34\ \text{ksi}$$
-                                    
-                                    <p><strong>4.5 Resistencia nominal:</strong></p>
-                                    $$P_n = F_{cr} A_g = 6.34 \times 18.3 = 116.0\ \text{kips}$$
-                                    
-                                    <p><strong>4.6 Resistencia de diseño:</strong></p>
-                                    $$\phi_c P_n = 0.90 \times 116.0 = 104.4\ \text{kips}$$
-                                    
-                                    <p class="advertencia-texto">⚠️ <strong>No cumple:</strong> $104.4 < 300$ kips. El perfil W21×62 es insuficiente.</p>
-                                </div>
-
-                                <div class="paso">
-                                    <h6>Paso 5: Nuevo intento - W21×101</h6>
-                                    
-                                    <p>Propiedades del W21×101:</p>
+                                    <p>Después de verificar varios perfiles, se selecciona <strong>W21×101</strong>:</p>
                                     <ul>
                                         <li>$A_g = 29.8\ \text{in}^2$</li>
                                         <li>$r_x = 9.02\ \text{in}$</li>
-                                        <li>$r_y = 2.89\ \text{in}$</li>
+                                        <li>$r_y = 2.89\ \text{in}$ (radio de giro mínimo)</li>
                                     </ul>
                                     
                                     <p><strong>Relación de esbeltez:</strong></p>
                                     $$\frac{KL}{r} = \frac{408}{2.89} = 141.2$$
                                     
                                     <p><strong>Parámetro de esbeltez:</strong></p>
-                                    $$\lambda_c = \frac{141.2}{\pi} \times 0.0415 = 1.86$$
+                                    $$\lambda_c = \frac{141.2}{3.1416}\sqrt{\frac{50}{29000}} = 44.94 \times 0.04151 = 1.87$$
                                     
-                                    <p>Columna elástica ($\lambda_c > 1.5$)</p>
+                                    <p><strong>Clasificación:</strong></p>
+                                    $$\lambda_c = 1.87 > 1.5 \quad \Rightarrow \text{Columna elástica}$$
                                     
                                     <p><strong>Esfuerzo crítico:</strong></p>
-                                    $$F_{cr} = \frac{0.877}{(1.86)^2} \times 50 = \frac{0.877}{3.46} \times 50 = 12.67\ \text{ksi}$$
+                                    $$F_{cr} = \frac{0.877}{(1.87)^2}(50) = \frac{0.877}{3.50}(50) = 0.251(50) = 12.53\ \text{ksi}$$
                                     
                                     <p><strong>Resistencia nominal:</strong></p>
-                                    $$P_n = 12.67 \times 29.8 = 377.6\ \text{kips}$$
+                                    $$P_n = 12.53 \times 29.8 = 373.4\ \text{kips}$$
                                     
                                     <p><strong>Resistencia de diseño:</strong></p>
-                                    $$\phi_c P_n = 0.90 \times 377.6 = 339.8\ \text{kips}$$
+                                    $$\phi_c P_n = 0.90 \times 373.4 = 336.1\ \text{kips}$$
                                     
-                                    <p class="exito-texto">✅ <strong>Cumple:</strong> $339.8 > 300$ kips</p>
+                                    <p class="exito-texto">✅ <strong>CUMPLE:</strong> $336.1 > 300$ kips</p>
                                 </div>
                             </div>
 
@@ -334,11 +309,12 @@
                                     <p><strong>Perfil seleccionado:</strong> <span class="resultado-grande">W21×101</span></p>
                                     <ul class="resultados-lista">
                                         <li>Área bruta: $A_g = 29.8\ \text{in}^2$</li>
-                                        <li>Parámetro de esbeltez: $\lambda_c = 1.86$</li>
-                                        <li>Esfuerzo crítico: $F_{cr} = 12.67\ \text{ksi}$</li>
-                                        <li>Resistencia nominal: $P_n = 377.6\ \text{kips}$</li>
-                                        <li>Resistencia de diseño: <span class="resultado-destacado">$\phi_c P_n = 339.8\ \text{kips}$</span></li>
-                                        <li>Margen de seguridad: $(339.8 - 300)/300 = 13.3\%$</li>
+                                        <li>Radio de giro controlante: $r_y = 2.89\ \text{in}$</li>
+                                        <li>Parámetro de esbeltez: $\lambda_c = 1.87$</li>
+                                        <li>Esfuerzo crítico: $F_{cr} = 12.53\ \text{ksi}$</li>
+                                        <li>Resistencia nominal: $P_n = 373.4\ \text{kips}$</li>
+                                        <li>Resistencia de diseño: <span class="resultado-destacado">$\phi_c P_n = 336.1\ \text{kips}$</span></li>
+                                        <li>Margen de seguridad: $12.0\%$</li>
                                     </ul>
                                 </div>
                             </div>
@@ -346,11 +322,317 @@
                             <div class="notas-adicionales">
                                 <h5>📝 Notas adicionales</h5>
                                 <ul>
-                                    <li>La condición de voladizo (base empotrada, extremo libre) es la más crítica para pandeo, con $K = 2.0$, duplicando la longitud efectiva.</li>
-                                    <li>La alta relación de esbeltez ($KL/r = 141.2$) produce pandeo elástico, donde el esfuerzo crítico es considerablemente menor que el esfuerzo de fluencia.</li>
-                                    <li>El perfil W21×101 proporciona un margen de seguridad del 13.3% sobre la carga requerida, lo cual es adecuado considerando variabilidades de fabricación e instalación.</li>
-                                    <li>En la práctica, se recomienda verificar también el pandeo torsional y por flexo-torsión para secciones con relaciones $b/d$ extremas.</li>
-                                    <li>Para método ASD, la resistencia admisible sería: $P_n/\Omega_c = 377.6/1.67 = 226.1$ kips.</li>
+                                    <li>La condición de columna en voladizo ($K = 2.0$) resulta en una longitud efectiva muy grande ($KL = 408\ \text{in}$), lo que genera alta esbeltez y reduce significativamente la capacidad de carga.</li>
+                                    <li>El diseño está controlado por pandeo alrededor del eje débil (eje y), que tiene el menor radio de giro.</li>
+                                    <li>Para este tipo de aplicación con columnas en voladizo, es crítico minimizar la longitud no arriostrada o proporcionar arriostramientos intermedios para reducir la longitud efectiva.</li>
+                                    <li>Si se usara ASD, la resistencia admisible sería: $P_n/\Omega_c = 373.4/1.67 = 223.6\ \text{kips}$.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                </section>
+
+                <!-- ==================== SECCIÓN: LONGITUD EFECTIVA ==================== -->
+                <section class="seccion">
+                    <h2 class="titulo-seccion">Longitud Efectiva</h2>
+                    
+                    <!-- ==================== PROBLEMA 4.5-10 ==================== -->
+                    <article class="problema">
+                        <h3 class="titulo-problema">Problema 4.5-10</h3>
+                        
+                        <div class="enunciado">
+                            <h4>🔵 ENUNCIADO DEL PROBLEMA</h4>
+                            <p>El marco rígido mostrado en la Figura P4.5-10 no está arriostrado en su plano. En la dirección perpendicular al marco, éste está arriostrado en sus nudos. Las conexiones en esos puntos de arriostramiento son simples (libre de momentos). Las trabes de techo son W14×30, y las trabes de piso son W16×36. El miembro BC es un perfil W10×45. Considere acero A36 y seleccione un perfil W para AB. Asuma que la combinación de carga gobernante no causa momento en AB y que la carga axial factorizada es de 150 kips.</p>
+                        </div>
+
+                        <div class="figura">
+                            <div class="figura-descripcion">
+                                <h5>Figura P4.5-10</h5>
+                                <div class="diagrama-texto">
+                                    <p><strong>Esquema del marco rígido (5 pisos, 4 vanos):</strong></p>
+                                    <ul>
+                                        <li><strong>Configuración general:</strong>
+                                            <ul>
+                                                <li>5 columnas verticales separadas 20 ft cada una (4 vanos × 20' = 80 ft total)</li>
+                                                <li>5 niveles horizontales con vigas</li>
+                                                <li>Marco no arriostrado en su plano (lateral)</li>
+                                                <li>Arriostrado perpendicularmente con conexiones simples</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Alturas de los niveles (desde la base):</strong>
+                                            <ul>
+                                                <li>Nivel 1 (Piso 1): 18 ft</li>
+                                                <li>Nivel 2 (Piso 2): 36 ft (18 ft adicionales)</li>
+                                                <li>Nivel 3 (Piso 3): 54 ft (18 ft adicionales)</li>
+                                                <li>Nivel 4 (Piso 4): 68 ft (14 ft adicionales)</li>
+                                                <li>Nivel 5 (Techo): 82 ft (14 ft adicionales)</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Miembros identificados:</strong>
+                                            <ul>
+                                                <li>Punto A: Nudo en el techo (82 ft), segunda columna desde la izquierda</li>
+                                                <li>Punto B: Nudo en Piso 4 (68 ft), segunda columna desde la izquierda</li>
+                                                <li>Punto C: Nudo en Piso 3 (54 ft), segunda columna desde la izquierda</li>
+                                                <li>Miembro AB: Columna superior (del Piso 4 al Techo), longitud = 14 ft</li>
+                                                <li>Miembro BC: Columna inferior (del Piso 3 al Piso 4), perfil W10×45, longitud = 14 ft</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Elementos estructurales:</strong>
+                                            <ul>
+                                                <li>Trabes de techo: W14×30</li>
+                                                <li>Trabes de piso: W16×36</li>
+                                                <li>Todas las columnas tienen apoyos articulados en la base</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <p class="nota-figura">Nota: El diagrama original muestra un marco completo con 5 columnas y 5 niveles, con todas las vigas conectadas formando un marco rígido.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="solucion">
+                            <h4>SOLUCIÓN</h4>
+                            
+                            <div class="datos">
+                                <h5>📋 Datos del problema</h5>
+                                <ul>
+                                    <li>Acero A36: $F_y = 36\ \text{ksi}$, $E = 29000\ \text{ksi}$</li>
+                                    <li>Carga axial factorizada (LRFD): $P_u = 150\ \text{kips}$</li>
+                                    <li>Miembro a diseñar: Columna AB (desde nudo B en piso 4 hasta nudo A en techo)</li>
+                                    <li>Longitud de AB: $L_{AB} = 82 - 68 = 14\ \text{ft} = 168\ \text{in}$</li>
+                                    <li>Marco no arriostrado en su plano (lateral)</li>
+                                    <li>En dirección perpendicular: arriostrado en nudos con conexiones simples (articuladas)</li>
+                                    <li>Factor de resistencia LRFD: $\phi_c = 0.90$</li>
+                                    <li>Elementos estructurales dados:
+                                        <ul>
+                                            <li>Trabes de techo: W14×30 ($I = 291\ \text{in}^4$)</li>
+                                            <li>Trabes de piso: W16×36 ($I = 448\ \text{in}^4$)</li>
+                                            <li>Miembro BC: W10×45 ($I_x = 248\ \text{in}^4$)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="procedimiento">
+                                <h5>⚙️ Procedimiento</h5>
+                                
+                                <div class="paso">
+                                    <h6>Paso 1: Selección tentativa - W8×31</h6>
+                                    <ul>
+                                        <li>$A_g = 9.13\ \text{in}^2$</li>
+                                        <li>$I_x = 110\ \text{in}^4$</li>
+                                        <li>$r_x = 3.47\ \text{in}$</li>
+                                        <li>$r_y = 2.02\ \text{in}$</li>
+                                    </ul>
+                                </div>
+
+                                <div class="paso">
+                                    <h6>Paso 2: Cálculo de factores G para el alignment chart</h6>
+                                    
+                                    <p><strong>Factor G en el nudo A (extremo superior de AB):</strong></p>
+                                    
+                                    $$G_A = \frac{I_{AB}/L_{AB}}{2(I_{\text{techo}}/L_{\text{techo}})} = \frac{110/14}{2(291/20)} = \frac{7.86}{29.10} = 0.27$$
+                                    
+                                    <p><strong>Factor G en el nudo B (extremo inferior de AB):</strong></p>
+                                    
+                                    $$G_B = \frac{I_{AB}/L_{AB} + I_{BC}/L_{BC}}{2(I_{\text{piso}}/L_{\text{piso}})} = \frac{110/14 + 248/14}{2(448/20)} = \frac{25.57}{44.80} = 0.57$$
+                                    
+                                    <p><strong>Del nomograma AISC para marcos no arriostrados:</strong></p>
+                                    $$K_x \approx 1.14$$
+                                </div>
+
+                                <div class="paso">
+                                    <h6>Paso 3: Verificación del pandeo en eje x (en el plano)</h6>
+                                    
+                                    $$K_x L = 1.14 \times 168 = 191.5\ \text{in}$$
+                                    $$\frac{K_x L}{r_x} = \frac{191.5}{3.47} = 55.19$$
+                                    $$\lambda_c = 0.619 < 1.5 \text{ (columna inelástica)}$$
+                                </div>
+
+                                <div class="paso">
+                                    <h6>Paso 4: Verificación del pandeo en eje y (perpendicular)</h6>
+                                    
+                                    $$K_y = 1.0 \text{ (arriostrado lateralmente)}$$
+                                    $$K_y L = 168\ \text{in}$$
+                                    $$\frac{K_y L}{r_y} = \frac{168}{2.02} = 83.17 > 55.19$$
+                                    
+                                    <p><strong>El eje y controla el diseño</strong></p>
+                                </div>
+
+                                <div class="paso">
+                                    <h6>Paso 5: Cálculo de la resistencia</h6>
+                                    
+                                    $$\lambda_c = \frac{83.17}{\pi}\sqrt{\frac{36}{29000}} = 0.933 < 1.5$$
+                                    $$F_{cr} = 0.658^{0.870} \times 36 = 25.09\ \text{ksi}$$
+                                    $$P_n = 25.09 \times 9.13 = 229.1\ \text{kips}$$
+                                    $$\phi_c P_n = 0.90 \times 229.1 = 206.2\ \text{kips}$$
+                                    
+                                    <p class="exito-texto">✅ <strong>CUMPLE:</strong> $206.2 > 150$ kips</p>
+                                </div>
+                            </div>
+
+                            <div class="resultado">
+                                <h5>✅ Respuesta Final</h5>
+                                <div class="resultado-final-destacado">
+                                    <p><strong>Perfil seleccionado:</strong> <span class="resultado-grande">W8×31</span></p>
+                                    
+                                    <ul class="resultados-lista">
+                                        <li>Área: $A_g = 9.13\ \text{in}^2$</li>
+                                        <li>Radio de giro controlante: $r_y = 2.02\ \text{in}$</li>
+                                        <li>Factor K en plano: $K_x = 1.14$</li>
+                                        <li>Factor K perpendicular: $K_y = 1.0$</li>
+                                        <li>Esbeltez controlante: $\frac{K_y L}{r_y} = 83.17$</li>
+                                        <li>Esfuerzo crítico: $F_{cr} = 25.09\ \text{ksi}$</li>
+                                        <li>Resistencia de diseño: <span class="resultado-destacado">$\phi_c P_n = 206.2\ \text{kips}$</span></li>
+                                        <li>Margen de seguridad: $37.5\%$</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="notas-adicionales">
+                                <h5>📝 Notas adicionales</h5>
+                                <ul>
+                                    <li>En marcos rígidos no arriostrados, el factor $K$ se determina usando el <em>alignment chart</em> (nomograma) basado en los factores $G$ en cada extremo del miembro.</li>
+                                    <li>El factor $G$ representa la restricción rotacional: $G = \frac{\sum (I_c/L_c)}{\sum (I_g/L_g)}$</li>
+                                    <li>Aunque el marco es no arriostrado en su plano ($K_x = 1.14$), el pandeo crítico ocurre en el eje perpendicular ($K_y = 1.0$) debido al menor radio de giro.</li>
+                                    <li>Si se requiriera ASD: $P_n/\Omega_c = 229.1/1.67 = 137.2\ \text{kips}$.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                </section>
+
+                <!-- ==================== SECCIÓN: MIEMBROS COMPUESTOS ==================== -->
+                <section class="seccion">
+                    <h2 class="titulo-seccion">Miembros compuestos</h2>
+                    
+                    <!-- ==================== PROBLEMA 4.7-8 ==================== -->
+                    <article class="problema">
+                        <h3 class="titulo-problema">Problema 4.7-8</h3>
+                        
+                        <div class="enunciado">
+                            <h4>🔵 ENUNCIADO DEL PROBLEMA</h4>
+                            <p>Una columna está formada con cuatro ángulos L5 × 5 × ¾, como se muestra en la Figura P4.7.8. Los ángulos se conectan entre sí por medio de barras de <em>celosía</em>*, cuya función primaria es mantener los ángulos fijos en su posición relativa. Se considera que la celosía no contribuye al área de la sección transversal, por lo que se muestra con líneas punteadas. La Sección E4 de AISC trata el diseño de la celosía. Calcule la resistencia de diseño por compresión con acero A572 Grado 50 y una longitud efectiva de 30 pies con respecto a ambos ejes. Investigue sólo el pandeo por flexión (no considere pandeo por torsión).</p>
+                            <p class="nota-pie">* También conocido como barras de enlace (lacing bars) son elementos diagonales que conectan los componentes de miembros armados, proporcionando rigidez lateral y manteniendo la geometría de la sección.</p>
+                        </div>
+
+                        <div class="figura">
+                            <div class="figura-descripcion">
+                                <h5>Figura P4.7-8</h5>
+                                <div class="diagrama-texto">
+                                    <p><strong>Sección transversal de la columna compuesta:</strong></p>
+                                    <ul>
+                                        <li><strong>Vista en planta (sección transversal):</strong>
+                                            <ul>
+                                                <li>Forma cuadrada de 1'-6" × 1'-6" (18 in × 18 in)</li>
+                                                <li>Cuatro ángulos L5×5×¾ ubicados en las esquinas</li>
+                                                <li>Cada ángulo con sus alas orientadas hacia el interior del cuadrado</li>
+                                                <li>Los ángulos se ubican simétricamente en cada esquina</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Vista lateral (alzado con celosía):</strong>
+                                            <ul>
+                                                <li>Dos placas verticales paralelas separadas 1'-6"</li>
+                                                <li>Sistema de celosía en zigzag (lacing) conectando las placas</li>
+                                                <li>Pasadores circulares en cada vértice del zigzag</li>
+                                                <li>La celosía mantiene la separación constante entre ángulos</li>
+                                                <li>Patrón diagonal alternado que proporciona rigidez lateral</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <p class="nota-figura">Nota: El diagrama original muestra dos vistas: (izquierda) sección transversal cuadrada con los 4 ángulos en las esquinas, y (derecha) vista lateral con las placas verticales y el sistema de celosía en zigzag.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="solucion">
+                            <h4>SOLUCIÓN</h4>
+                            
+                            <div class="datos">
+                                <h5>📋 Datos del problema</h5>
+                                <ul>
+                                    <li>Acero A572 Grado 50: $F_y = 50\ \text{ksi}$, $E = 29000\ \text{ksi}$</li>
+                                    <li>Sección armada: 4 ángulos L5 × 5 × ¾</li>
+                                    <li>Dimensión de la sección: 1'-6" × 1'-6" (18 in × 18 in)</li>
+                                    <li>Longitud efectiva: $KL = 30\ \text{ft} = 360\ \text{in}$ (para ambos ejes)</li>
+                                    <li>Factor de resistencia LRFD: $\phi_c = 0.90$</li>
+                                    <li>Propiedades del ángulo L5×5×¾ (Manual AISC):
+                                        <ul>
+                                            <li>$A_1 = 6.94\ \text{in}^2$</li>
+                                            <li>$I_{\text{lado}} = 15.7\ \text{in}^4$</li>
+                                            <li>$\overline{x} = 1.52\ \text{in}$</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="procedimiento">
+                                <h5>⚙️ Procedimiento</h5>
+                                
+                                <div class="paso">
+                                    <h6>Paso 1: Área total</h6>
+                                    $$A_g = 4 \times 6.94 = 27.76\ \text{in}^2$$
+                                </div>
+
+                                <div class="paso">
+                                    <h6>Paso 2: Momento de inercia (teorema de ejes paralelos)</h6>
+                                    <p>Distancia del centroide de cada ángulo al centro de la sección:</p>
+                                    $$d = \frac{18}{2} - 1.52 = 7.48\ \text{in}$$
+                                    
+                                    $$I_x = I_y = 4\left[15.7 + 6.94(7.48)^2\right] = 4[15.7 + 388.3] = 1616\ \text{in}^4$$
+                                </div>
+
+                                <div class="paso">
+                                    <h6>Paso 3: Radio de giro</h6>
+                                    $$r = \sqrt{\frac{1616}{27.76}} = 7.630\ \text{in}$$
+                                </div>
+
+                                <div class="paso">
+                                    <h6>Paso 4: Verificación de pandeo</h6>
+                                    $$\frac{KL}{r} = \frac{360}{7.630} = 47.18 < 113.4 \text{ (columna inelástica)}$$
+                                    $$\lambda_c = \frac{47.18}{\pi}\sqrt{\frac{50}{29000}} = 0.624 < 1.5$$
+                                </div>
+
+                                <div class="paso">
+                                    <h6>Paso 5: Esfuerzo crítico y resistencia</h6>
+                                    $$F_{cr} = 0.658^{0.389} \times 50 = 0.8498 \times 50 = 42.49\ \text{ksi}$$
+                                    $$P_n = 42.49 \times 27.76 = 1180\ \text{kips}$$
+                                    $$\phi_c P_n = 0.90 \times 1180 = 1062\ \text{kips}$$
+                                </div>
+                            </div>
+
+                            <div class="resultado">
+                                <h5>✅ Respuesta Final</h5>
+                                <div class="resultado-final-destacado">
+                                    <p><strong>Propiedades de la sección compuesta:</strong></p>
+                                    <ul class="resultados-lista">
+                                        <li>Área total: $A_g = 27.76\ \text{in}^2$</li>
+                                        <li>Momento de inercia: $I_x = I_y = 1616\ \text{in}^4$</li>
+                                        <li>Radio de giro: $r = 7.630\ \text{in}$</li>
+                                        <li>Relación de esbeltez: $\frac{KL}{r} = 47.18$</li>
+                                        <li>Esfuerzo crítico: $F_{cr} = 42.49\ \text{ksi}$</li>
+                                    </ul>
+                                    
+                                    <p><strong>Resultados finales:</strong></p>
+                                    <ul class="resultados-lista">
+                                        <li>Resistencia nominal: <span class="resultado-grande">$P_n = 1180\ \text{kips}$</span></li>
+                                        <li>Resistencia de diseño: <span class="resultado-grande">$\phi_c P_n = 1062\ \text{kips}$</span></li>
+                                        <li>Si se requiere ASD: $P_n/\Omega_c = 707\ \text{kips}$</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="notas-adicionales">
+                                <h5>📝 Notas adicionales</h5>
+                                <ul>
+                                    <li>La sección armada con 4 ángulos L5×5×¾ dispuestos en las esquinas de un cuadrado de 18" × 18" forma una sección altamente eficiente para resistir cargas de compresión.</li>
+                                    <li>La celosía (barras de enlace) es esencial para mantener los ángulos en su posición relativa y evitar el pandeo local de los componentes individuales. Aunque no contribuye al área efectiva, debe diseñarse de acuerdo con la Sección E4 del AISC.</li>
+                                    <li>El momento de inercia se calculó usando el teorema de ejes paralelos: $I = \sum (I_{\text{propio}} + Ad^2)$ donde $d = 7.48$ in es la distancia desde el centroide global hasta el centroide de cada ángulo.</li>
+                                    <li>La sección es simétrica respecto a ambos ejes, por lo que $I_x = I_y$ y el radio de giro es el mismo en ambas direcciones.</li>
+                                    <li>El valor de esbeltez relativamente bajo ($KL/r = 47.18$) indica una columna robusta con buena capacidad de carga.</li>
+                                    <li>La resistencia de diseño de 1062 kips representa una capacidad significativa, apropiada para aplicaciones de columnas en edificios industriales o estructuras de gran altura.</li>
                                 </ul>
                             </div>
                         </div>
